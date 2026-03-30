@@ -20,7 +20,7 @@ interface Props {
 
 const AppLayout: React.FC<Props> = ({ className }) => {
     return (
-        <div className={twMerge('', className)}>
+        <div className={twMerge(' ', className)}>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<HomePageLayout />} />
