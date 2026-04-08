@@ -1,6 +1,6 @@
 // 📦 LIBRARIES IMPORT
 import { twMerge } from 'tailwind-merge';
-import BackgroundImage from '@/shared/assets/Sunlight Forest.png';
+import { Phone } from 'lucide-react';
 /* ===================================================================== */
 /*
 🧩 HERO SECTION - Hero Section of the website.
@@ -18,103 +18,97 @@ interface Props {
 
 const HeroSection: React.FC<Props> = ({ className }) => {
     return (
-        <div>
-            <section className={twMerge('relative min-h-screen w-full overflow-hidden', className)}>
-                {/* Background image */}
-                <img
-                    src={BackgroundImage}
-                    alt="Background"
-                    className="absolute inset-0 h-full w-full bg-cover bg-center object-cover brightness-90 saturate-50"
-                />
+        <section
+            id="home"
+            className={twMerge('relative overflow-hidden bg-white text-slate-800', className)}
+        >
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(187,247,208,0.35),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(220,252,231,0.55),transparent_40%)]" />
 
-                {/* White-green overlay */}
-                <div className="absolute inset-0 bg-linear-to-b from-white/80 via-green-50/75 to-green-100/85" />
+            <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-emerald-100/60 blur-3xl" />
+            <div className="absolute top-20 right-0 h-80 w-80 rounded-full bg-green-50 blur-3xl" />
+            <div className="absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-emerald-50 blur-3xl" />
 
-                {/* Content */}
-                <div className="relative z-10 flex min-h-screen flex-col">
-                    {/* Navbar */}
-                    <nav className="flex items-center justify-between border-b border-green-200/30 bg-white/60 px-11 py-5 backdrop-blur-md">
-                        {/* Logo */}
-                        <div className="flex items-center gap-2.5">
-                            <div className="flex h-9 w-9 items-center justify-center rounded-full border border-green-500/30 bg-green-500/10">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                    <path
-                                        d="M12 3C12 3 7 8 7 13C7 15.76 9.24 18 12 18C14.76 18 17 15.76 17 13C17 8 12 3 12 3Z"
-                                        fill="rgba(80,160,100,0.75)"
-                                    />
-                                    <path
-                                        d="M12 18V22"
-                                        stroke="rgba(80,160,100,0.6)"
-                                        strokeWidth="1.5"
-                                        strokeLinecap="round"
-                                    />
-                                </svg>
-                            </div>
-                            <div>
-                                <div
-                                    className="text-xl font-medium tracking-wide text-green-900"
-                                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                                >
-                                    Serenity Mind
-                                </div>
-                                <div className="text-[9.5px] tracking-widest text-green-800/50 uppercase">
-                                    Therapy & Wellness
-                                </div>
-                            </div>
+            <div className="relative mx-auto min-h-screen max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="grid min-h-[calc(100vh-96px)] items-center gap-14 py-10 lg:grid-cols-2 lg:gap-10 lg:py-5">
+                    <div className="max-w-2xl">
+                        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-800">
+                            <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                            Compassionate care for healing, growth, and peace
                         </div>
 
-                        {/* Nav links */}
-                        <ul className="flex list-none items-center gap-8">
-                            {['About', 'Services', 'Our Team', 'Contact'].map((link) => (
-                                <li
-                                    key={link}
-                                    className="text-sm tracking-wide text-green-700 no-underline transition-colors hover:text-green-900"
-                                >
-                                    {link}
-                                </li>
-                            ))}
-                            <li className="rounded-full bg-green-700 px-5 py-2.5 text-sm font-medium text-white no-underline transition-colors hover:bg-green-800">
-                                Book a Session
-                            </li>
-                        </ul>
-                    </nav>
-
-                    {/* Hero body */}
-                    <div className="flex flex-1 flex-col items-center justify-center px-10 pb-14 text-center">
-                        {/* Badge */}
-                        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-green-500/25 bg-green-500/10 px-4 py-1.5 text-[10.5px] tracking-widest text-green-800 uppercase">
-                            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-green-500" />
-                            Licensed Professional Therapists
-                        </div>
-
-                        {/* Headline */}
-                        <h1
-                            className="mb-5 max-w-2xl text-5xl leading-snug font-medium tracking-tight text-green-950"
-                            style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                        >
-                            A space to heal,{' '}
-                            <em className="text-green-700 italic">grow, and find peace</em>
+                        <h1 className="max-w-2xl text-4xl leading-tight font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+                            A calm place to begin your journey toward{' '}
+                            <span className="text-emerald-700">clarity and healing</span>
                         </h1>
 
-                        {/* Subtext */}
-                        <p className="mb-9 max-w-md text-sm leading-relaxed font-light text-green-800/70">
-                            Compassionate, evidence-based therapy tailored to you. We walk with you
-                            through every step of your journey toward wellbeing.
+                        <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
+                            We provide thoughtful, professional therapy services for individuals,
+                            couples, and families seeking support, emotional balance, and lasting
+                            personal growth.
                         </p>
 
-                        {/* CTAs */}
-                        <div className="flex items-center gap-3">
-                            <button className="cursor-pointer rounded-full border-none bg-green-700 px-7 py-3 text-sm font-medium text-white transition-colors hover:bg-green-800">
-                                Book a Free Consultation
-                            </button>
-                            <button className="cursor-pointer rounded-full border border-green-700/30 bg-white/70 px-7 py-3 text-sm text-green-800 transition-colors hover:bg-white/90">
-                                Explore Our Services
-                            </button>
+                        <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                            <a
+                                href="#contact"
+                                className="inline-flex items-center justify-center rounded-full bg-emerald-700 px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-800"
+                            >
+                                Schedule an Appointment
+                            </a>
+
+                            <a
+                                href="#services"
+                                className="inline-flex items-center justify-center rounded-full border border-emerald-200 bg-white px-6 py-3.5 text-sm font-semibold text-emerald-800 transition hover:bg-emerald-50"
+                            >
+                                Explore Services
+                            </a>
+                        </div>
+
+                        <div className="mt-10 flex flex-col gap-4 text-sm text-slate-600 sm:flex-row sm:items-center sm:gap-8">
+                            <div className="flex items-center gap-3">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-emerald-100">
+                                    <Phone className="h-4 w-4 text-emerald-700" />
+                                </div>
+                                <div>
+                                    <p className="font-medium text-slate-900">Call us</p>
+                                    <p>(123) 456-7890</p>
+                                </div>
+                            </div>
+
+                            <div className="hidden h-10 w-px bg-slate-200 sm:block" />
+
+                            <div>
+                                <p className="font-medium text-slate-900">Available for</p>
+                                <p>In-person sessions • Online consultations</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="relative">
+                        <div className="absolute -inset-4 rounded-4xl bg-emerald-100/50 blur-2xl" />
+
+                        <div className="relative overflow-hidden rounded-4xl border border-emerald-100 bg-white p-3 shadow-[0_20px_60px_-20px_rgba(16,24,40,0.18)]">
+                            <div className="overflow-hidden rounded-3xl bg-emerald-50">
+                                <img
+                                    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Calm nature landscape representing peace and healing"
+                                    className="h-105 w-full object-cover sm:h-125"
+                                />
+                            </div>
+
+                            <div className="absolute right-8 bottom-8 left-8 rounded-3xl border border-white/50 bg-white/85 p-5 backdrop-blur">
+                                <p className="text-sm font-semibold text-emerald-800">
+                                    Professional, gentle, and confidential support
+                                </p>
+                                <p className="mt-2 text-sm leading-6 text-slate-600">
+                                    Helping clients navigate anxiety, emotional distress,
+                                    relationship concerns, life transitions, and personal healing.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     );
 };
 

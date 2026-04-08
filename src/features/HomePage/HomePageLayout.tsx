@@ -1,9 +1,10 @@
 // 📦 LIBRARIES IMPORT
 import { twMerge } from 'tailwind-merge';
-import HeroSection_2 from './containers/HeroSection_2';
-import MissionSection_2 from './containers/MissionSection_2';
-import CompanySection_2 from './containers/CompanySection_2';
 import ServicesSection from './containers/ServicesSection';
+import TestimonialSection from './containers/TestimonialSection';
+import HeroSection from './containers/HeroSection';
+import MissionSection from './containers/MissionSection';
+import CompanySection from './containers/CompanySection';
 
 /* ===================================================================== */
 /*
@@ -23,10 +24,11 @@ interface Props {
 const HomePageLayout: React.FC<Props> = ({ className }) => {
     return (
         <div className={twMerge('', className)}>
-            <HeroSection_2 />
-            <MissionSection_2 />
-            <CompanySection_2 />
+            <HeroSection />
+            <MissionSection />
+            <CompanySection />
             <ServicesSection />
+            <TestimonialSection />
         </div>
     );
 };

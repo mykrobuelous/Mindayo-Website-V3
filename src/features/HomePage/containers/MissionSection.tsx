@@ -1,9 +1,10 @@
 // 📦 LIBRARIES IMPORT
+import { Eye, Target } from 'lucide-react';
 import { twMerge } from 'tailwind-merge';
 
 /* ===================================================================== */
 /*
-🧩 MISSION SECTION - Mission and vision section of the website.
+🧩 MISSION & VISION SECTION - Where the mission and vision section.
 📶 INPUTS
     - 
 💾 DATA
@@ -18,149 +19,92 @@ interface Props {
 
 const MissionSection: React.FC<Props> = ({ className }) => {
     return (
-        <section className={twMerge('w-full bg-[#f7fdf8] px-16 py-20', className)}>
-            {/* Section label */}
-            <div className="mb-4 flex items-center justify-center gap-3">
-                <div className="h-px w-10 bg-green-500/35" />
-                <span className="text-[10.5px] font-normal tracking-[0.13em] text-green-600 uppercase">
-                    Who we are
-                </span>
-                <div className="h-px w-10 bg-green-500/35" />
-            </div>
+        <section id="about" className={twMerge('bg-[#f8fcf9] py-20 sm:py-24', className)}>
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-3xl text-center">
+                    <span className="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-800">
+                        Our Foundation
+                    </span>
 
-            {/* Intro */}
-            <div className="mb-16 text-center">
-                <h2
-                    className="mb-4 text-[42px] leading-snug font-medium tracking-tight text-green-950"
-                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                >
-                    Rooted in care,
-                    <br />
-                    <em className="text-green-700 italic">guided by purpose</em>
-                </h2>
-                <p className="mx-auto max-w-md text-sm leading-relaxed font-light text-green-800/70">
-                    Everything we do is shaped by a deep commitment to your healing journey — from
-                    the values we hold to the vision we work toward every day.
-                </p>
-            </div>
+                    <h2 className="mt-6 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+                        Guided by purpose, compassion, and healing
+                    </h2>
 
-            {/* Mission + Vision cards */}
-            <div className="mx-auto grid max-w-3xl grid-cols-2 gap-6">
-                {/* Mission */}
-                <div className="relative overflow-hidden rounded-2xl border border-green-500/15 bg-white p-9">
-                    <div className="absolute top-0 right-0 left-0 h-0.75 rounded-t-2xl bg-green-700" />
-                    <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-green-500/20 bg-green-500/10">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                            <circle cx="12" cy="12" r="9" stroke="#3a7d50" strokeWidth="1.5" />
-                            <path
-                                d="M12 7v5l3 3"
-                                stroke="#3a7d50"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                            />
-                        </svg>
-                    </div>
-                    <p className="mb-2.5 text-[10px] font-medium tracking-[0.13em] text-green-600 uppercase">
-                        Our Mission
-                    </p>
-                    <h3
-                        className="mb-4 text-[26px] leading-snug font-medium tracking-tight text-green-950"
-                        style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                    >
-                        To walk with you, every step of the way
-                    </h3>
-                    <p className="text-[13.5px] leading-relaxed font-light text-green-800/75">
-                        We provide compassionate, evidence-based mental health support in a safe and
-                        non-judgmental space — empowering individuals to understand themselves,
-                        overcome challenges, and live fuller lives.
+                    <p className="mt-4 text-base leading-8 text-slate-600 sm:text-lg">
+                        Our practice is rooted in a clear mission and a hopeful vision: to provide a
+                        safe, supportive space where individuals and families can heal, grow, and
+                        move forward with confidence.
                     </p>
                 </div>
 
-                {/* Vision */}
-                <div className="relative overflow-hidden rounded-2xl border border-green-500/15 bg-white p-9">
-                    <div className="absolute top-0 right-0 left-0 h-0.75 rounded-t-2xl bg-green-500/30" />
-                    <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-green-500/20 bg-green-500/10">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                            <path
-                                d="M12 3C12 3 7 8 7 13C7 15.76 9.24 18 12 18C14.76 18 17 15.76 17 13C17 8 12 3 12 3Z"
-                                fill="rgba(58,125,80,0.2)"
-                                stroke="#3a7d50"
-                                strokeWidth="1.5"
-                            />
-                            <path
-                                d="M12 18V21"
-                                stroke="#3a7d50"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                            />
-                        </svg>
-                    </div>
-                    <p className="mb-2.5 text-[10px] font-medium tracking-[0.13em] text-green-600 uppercase">
-                        Our Vision
-                    </p>
-                    <h3
-                        className="mb-4 text-[26px] leading-snug font-medium tracking-tight text-green-950"
-                        style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                    >
-                        A world where mental wellness is within reach for all
-                    </h3>
-                    <p className="text-[13.5px] leading-relaxed font-light text-green-800/75">
-                        We envision a community where seeking help is met with dignity, access is
-                        never a barrier, and every person has the tools to thrive — not just
-                        survive.
-                    </p>
-                </div>
-            </div>
+                <div className="mt-14 grid gap-8 lg:grid-cols-2">
+                    <article className="group relative overflow-hidden rounded-4xl border border-emerald-100 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:p-10">
+                        <div className="absolute top-0 left-0 h-1.5 w-full bg-emerald-600" />
 
-            {/* Core values strip */}
-            <div className="mx-auto mt-6 flex max-w-3xl items-center gap-8 rounded-2xl border border-green-500/15 bg-white px-10 py-8">
-                <div className="flex h-13 w-13 shrink-0 items-center justify-center rounded-full border border-green-500/25 bg-green-500/10">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path
-                            d="M12 21C12 21 4 15 4 9C4 6.24 6.24 4 9 4C10.5 4 11.86 4.66 12.83 5.72C13.14 5.38 13.5 5.08 13.9 4.84"
-                            stroke="#3a7d50"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                        />
-                        <path
-                            d="M15 4C17.76 4 20 6.24 20 9C20 15 12 21 12 21"
-                            stroke="#3a7d50"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                        />
-                    </svg>
-                </div>
-
-                <div className="flex-1">
-                    <h3
-                        className="mb-3 text-[22px] font-medium text-green-950"
-                        style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                    >
-                        Our core values
-                    </h3>
-                    <div className="flex flex-col gap-2.5">
-                        {[
-                            { label: 'Compassion', desc: 'meeting you exactly where you are' },
-                            { label: 'Integrity', desc: 'honest, ethical, and transparent care' },
-                            {
-                                label: 'Growth',
-                                desc: 'believing in your capacity to heal and thrive',
-                            },
-                        ].map(({ label, desc }) => (
-                            <div key={label} className="flex items-start gap-2.5">
-                                <span className="mt-1.75 h-1.5 w-1.5 shrink-0 rounded-full bg-green-700" />
-                                <p className="text-[13px] leading-relaxed font-light text-green-800/80">
-                                    <strong className="font-medium text-green-950">{label}</strong>{' '}
-                                    — {desc}
-                                </p>
+                        <div className="flex items-center gap-4">
+                            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
+                                <Target className="h-7 w-7" />
                             </div>
-                        ))}
-                    </div>
-                </div>
 
-                <button className="shrink-0 cursor-pointer rounded-full border-none bg-green-700 px-6 py-3 text-sm font-medium whitespace-nowrap text-white transition-colors hover:bg-green-800">
-                    Meet our therapist
-                </button>
+                            <div>
+                                <p className="text-sm font-medium tracking-[0.2em] text-emerald-700 uppercase">
+                                    Mission
+                                </p>
+                                <h3 className="mt-1 text-2xl font-semibold text-slate-900">
+                                    Why we do what we do
+                                </h3>
+                            </div>
+                        </div>
+
+                        <p className="mt-8 text-base leading-8 text-slate-600">
+                            Our mission is to provide compassionate, evidence-based, and
+                            client-centered mental health care that helps individuals, couples, and
+                            families find clarity, resilience, and emotional well-being in every
+                            stage of life.
+                        </p>
+
+                        <div className="mt-8 rounded-2xl bg-emerald-50 p-5">
+                            <p className="text-sm font-semibold text-emerald-800">Core focus</p>
+                            <p className="mt-2 text-sm leading-7 text-slate-600">
+                                Safe space • Genuine support • Professional guidance • Personal
+                                growth
+                            </p>
+                        </div>
+                    </article>
+
+                    <article className="group relative overflow-hidden rounded-4xl border border-emerald-100 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:p-10">
+                        <div className="absolute top-0 left-0 h-1.5 w-full bg-emerald-400" />
+
+                        <div className="flex items-center gap-4">
+                            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
+                                <Eye className="h-7 w-7" />
+                            </div>
+
+                            <div>
+                                <p className="text-sm font-medium tracking-[0.2em] text-emerald-700 uppercase">
+                                    Vision
+                                </p>
+                                <h3 className="mt-1 text-2xl font-semibold text-slate-900">
+                                    What we hope to build
+                                </h3>
+                            </div>
+                        </div>
+
+                        <p className="mt-8 text-base leading-8 text-slate-600">
+                            Our vision is to become a trusted center for healing and transformation,
+                            where mental health support is accessible, stigma-free, and empowering
+                            for every person seeking peace, restoration, and lasting change.
+                        </p>
+
+                        <div className="mt-8 rounded-2xl bg-emerald-50 p-5">
+                            <p className="text-sm font-semibold text-emerald-800">Long-term hope</p>
+                            <p className="mt-2 text-sm leading-7 text-slate-600">
+                                Stronger individuals • Healthier relationships • A more
+                                compassionate community
+                            </p>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
     );
