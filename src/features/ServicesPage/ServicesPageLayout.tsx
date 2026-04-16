@@ -1,7 +1,7 @@
 // 📦 LIBRARIES IMPORT
 import { twMerge } from 'tailwind-merge';
 import ServicesOverviewSection from './containers/ServicesOverviewSection';
-import DetailedServiceSection from './containers/DetailedServiceSection';
+// import DetailedServiceSection from './containers/DetailedServiceSection';
 
 /* ===================================================================== */
 /*
@@ -22,7 +22,7 @@ const ServicesPageLayout: React.FC<Props> = ({ className }) => {
     return (
         <div className={twMerge('', className)}>
             <ServicesOverviewSection />
-            <DetailedServiceSection />
+            {/* <DetailedServiceSection /> */}
         </div>
     );
 };

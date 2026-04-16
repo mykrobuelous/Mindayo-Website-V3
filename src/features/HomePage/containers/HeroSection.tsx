@@ -33,12 +33,12 @@ const HeroSection: React.FC<Props> = ({ className }) => {
                     <div className="max-w-2xl">
                         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-800">
                             <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                            Compassionate care for healing, growth, and peace
+                            Mind + Well-Being + Mindanao
                         </div>
 
                         <h1 className="max-w-2xl text-4xl leading-tight font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-                            A calm place to begin your journey toward{' '}
-                            <span className="text-emerald-700">clarity and healing</span>
+                            <span className="text-emerald-700">Mindayo</span> Pyschological Care
+                            Center
                         </h1>
 
                         <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">

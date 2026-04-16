@@ -1,104 +1,4 @@
-type ServiceDetail = {
-    title: string;
-    shortDescription: string;
-    fullDescription: string;
-    details: string[];
-    suitableFor: string[];
-    image?: string;
-};
-
-const featuredServices: ServiceDetail[] = [
-    {
-        title: 'Hypnosis',
-        shortDescription:
-            'A guided therapeutic approach that helps clients access deep relaxation, focused awareness, and meaningful inner work.',
-        fullDescription:
-            'Hypnosis is used as a supportive therapeutic tool to help clients access a calm and focused mental state where they may become more open to reflection, healing, and positive change. In a safe and professional setting, it can be integrated into therapy to support emotional regulation, behavior change, stress relief, and deeper self-understanding. Rather than losing control, the client remains guided, aware, and supported throughout the process.',
-        details: [
-            'Used in a calm, guided, and structured therapeutic setting',
-            'May support stress reduction, emotional healing, and behavior change',
-            'Focused on helping clients access deeper insight and relaxation',
-            'Conducted with professional care, safety, and respect for client comfort',
-        ],
-        suitableFor: [
-            'Stress and anxiety',
-            'Habit change',
-            'Emotional blocks',
-            'Relaxation support',
-        ],
-    },
-    {
-        title: 'Psychological Screening & Assessment',
-        shortDescription:
-            'Comprehensive assessments that help identify needs, clarify concerns, and guide care planning.',
-        fullDescription:
-            'Psychological screening and assessment services help provide a clearer understanding of a person’s emotional, behavioral, cognitive, or psychological concerns. These services may include interviews, standardized tools, observation, and professional interpretation. The goal is to support accurate understanding and create more informed recommendations for intervention, support, and growth.',
-        details: [
-            'Structured and professional assessment process',
-            'Helps identify patterns, concerns, and areas for support',
-            'Can guide treatment planning and further recommendations',
-            'Focused on clarity, insight, and evidence-based understanding',
-        ],
-        suitableFor: [
-            'Emotional concerns',
-            'Behavioral patterns',
-            'Academic or personal difficulties',
-            'Clinical clarification',
-        ],
-    },
-    {
-        title: 'Counselling & Psychotherapy',
-        shortDescription:
-            'A supportive therapeutic space for emotional healing, self-understanding, and personal growth.',
-        fullDescription:
-            'Counselling and psychotherapy offer clients a confidential and compassionate space to explore their thoughts, emotions, experiences, and challenges. Sessions are designed to help clients better understand themselves, build coping tools, process difficult experiences, and move toward healthier emotional patterns. The focus is not only on relief, but also on deeper growth and long-term well-being.',
-        details: [
-            'Safe and confidential therapeutic conversations',
-            'Supports emotional processing and personal reflection',
-            'Helps clients build practical coping and self-awareness skills',
-            'Encourages lasting growth, resilience, and healing',
-        ],
-        suitableFor: ['Anxiety', 'Grief', 'Stress', 'Life transitions', 'Relationship concerns'],
-    },
-    {
-        title: 'Training & Mental Health Seminars',
-        shortDescription:
-            'Programs that promote awareness, resilience, and emotional intelligence in groups and organizations.',
-        fullDescription:
-            'Training and seminar services are designed for schools, organizations, workplaces, and communities that want to strengthen mental health awareness and emotional well-being. These sessions can provide practical knowledge, reflection, and tools related to topics such as stress management, emotional resilience, communication, mental health literacy, and psychological safety.',
-        details: [
-            'Designed for communities, schools, and organizations',
-            'Builds awareness and practical understanding of mental health',
-            'Can be customized based on audience and goals',
-            'Encourages healthier environments and emotional intelligence',
-        ],
-        suitableFor: [
-            'Schools',
-            'Workplaces',
-            'Community groups',
-            'Professional development settings',
-        ],
-    },
-    {
-        title: 'Research & Program Development',
-        shortDescription:
-            'Evidence-based work that supports stronger mental health practices, interventions, and services.',
-        fullDescription:
-            'Research and program development services focus on creating stronger, evidence-informed approaches to mental health care, education, and community support. This may involve designing interventions, evaluating outcomes, building mental health programs, and contributing to better systems of care. The goal is to turn insight into meaningful and practical impact.',
-        details: [
-            'Grounded in research and evidence-based practice',
-            'Supports better services, interventions, and program design',
-            'Can contribute to community and organizational mental health initiatives',
-            'Focused on long-term quality, relevance, and impact',
-        ],
-        suitableFor: [
-            'Mental health organizations',
-            'Schools',
-            'Community initiatives',
-            'Program development needs',
-        ],
-    },
-];
+import { featuredServices } from '../data/serviceData';
 
 export default function DetailedServiceSection() {
     return (
@@ -149,7 +49,7 @@ export default function DetailedServiceSection() {
                                                 <img
                                                     src={service.image}
                                                     alt={service.title}
-                                                    className="h-full w-full rounded-[1.75rem] object-cover shadow-lg"
+                                                    className="h-full w-full rounded-[1.75rem] object-contain shadow-lg"
                                                 />
                                             ) : (
                                                 <div className="flex h-full min-h-65 w-full items-center justify-center rounded-[1.75rem] border border-emerald-300/60 bg-white/70 px-6 py-4 text-center text-sm font-medium text-emerald-800 backdrop-blur sm:min-h-80">

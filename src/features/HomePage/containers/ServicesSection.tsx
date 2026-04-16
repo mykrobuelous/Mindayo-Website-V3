@@ -1,9 +1,6 @@
 // 📦 LIBRARIES IMPORT
 import { twMerge } from 'tailwind-merge';
-import CounsellingImage from '@/shared/assets/Services/Counselling & Psychotherapy.png';
-import ResearchImage from '@/shared/assets/Services/Research.png';
-import ScreeningImage from '@/shared/assets/Services/Psychological Screening & Assessment.png';
-import TrainingImage from '@/shared/assets/Services/Training.png';
+import { servicesData } from '../data/homePageData';
 
 /* ===================================================================== */
 /*
@@ -15,39 +12,6 @@ import TrainingImage from '@/shared/assets/Services/Training.png';
 📊 STATES
     - 
 */
-
-type ServiceItem = {
-    title: string;
-    description: string;
-    image?: string;
-};
-
-const defaultServices: ServiceItem[] = [
-    {
-        title: 'Psychological Screening & Assessment',
-        description:
-            'Comprehensive evaluations to identify concerns, understand your mental health patterns, and create a personalized treatment roadmap.',
-        image: ScreeningImage,
-    },
-    {
-        title: 'Counselling & Psychotherapy',
-        description:
-            'A calm, guided space to explore emotions, build coping skills, and work through anxiety, stress, grief, and life transitions.',
-        image: CounsellingImage,
-    },
-    {
-        title: 'Training',
-        description:
-            'Professional development programs for organizations and individuals to enhance mental health awareness and emotional intelligence.',
-        image: TrainingImage,
-    },
-    {
-        title: 'Research',
-        description:
-            'Evidence-based studies and clinical research contributing to advancements in mental health treatment and therapeutic practices.',
-        image: ResearchImage,
-    },
-];
 
 interface Props {
     className?: string;
@@ -83,7 +47,7 @@ const ServicesSection: React.FC<Props> = ({ className }) => {
                 </div>
 
                 <div className="mt-14 grid gap-8 md:grid-cols-2">
-                    {defaultServices.map((service) => (
+                    {servicesData.map((service) => (
                         <article
                             key={service.title}
                             className="group overflow-hidden rounded-4xl border border-emerald-100 bg-white shadow-[0_20px_50px_-20px_rgba(16,24,40,0.15)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_-20px_rgba(5,150,105,0.25)]"
@@ -113,20 +77,19 @@ const ServicesSection: React.FC<Props> = ({ className }) => {
                                 </div>
                             </div>
 
-                            <div className="p-7 sm:p-8">
+                            <div className="flex flex-col gap-2 p-7 sm:p-8">
                                 <h3 className="text-2xl font-semibold tracking-tight text-slate-900">
                                     {service.title}
                                 </h3>
-
-                                <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
-                                    {service.description}
-                                </p>
-
-                                <div className="mt-6 flex items-center gap-3">
-                                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                                    <p className="text-sm font-medium text-emerald-800">
-                                        Personalized and client-centered support
-                                    </p>
+                                <div className="flex flex-col gap-4 px-1">
+                                    {service.details.map((detailsItem) => (
+                                        <div className="flex items-center gap-2">
+                                            <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                                            <p className="text-sm font-medium text-emerald-800">
+                                                {detailsItem}
+                                            </p>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </article>

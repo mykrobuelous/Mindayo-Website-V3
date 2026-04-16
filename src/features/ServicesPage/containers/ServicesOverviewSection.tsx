@@ -1,36 +1,4 @@
-type ServiceItem = {
-    title: string;
-    description: string;
-    image?: string;
-};
-
-const services: ServiceItem[] = [
-    {
-        title: 'Psychological Screening & Assessment',
-        description:
-            'Comprehensive evaluations to better understand concerns, identify patterns, and provide clear guidance for the next steps in care.',
-    },
-    {
-        title: 'Counselling & Psychotherapy',
-        description:
-            'Supportive therapy sessions that help clients process emotions, manage difficulties, and build healthier ways of coping and growing.',
-    },
-    {
-        title: 'Individual Therapy',
-        description:
-            'One-on-one sessions focused on personal healing, emotional clarity, self-understanding, and long-term mental wellness.',
-    },
-    {
-        title: 'Training & Seminars',
-        description:
-            'Programs designed for schools, organizations, and communities to strengthen mental health awareness, resilience, and emotional intelligence.',
-    },
-    {
-        title: 'Research & Program Development',
-        description:
-            'Evidence-based studies and mental health initiatives that contribute to better practices, deeper insight, and meaningful community impact.',
-    },
-];
+import { servicesData } from '../data/serviceData';
 
 export default function FeaturedServicesSection() {
     return (
@@ -54,7 +22,7 @@ export default function FeaturedServicesSection() {
                 </div>
 
                 <div className="mt-16 space-y-8">
-                    {services.map((service, index) => {
+                    {servicesData.map((service, index) => {
                         const isReversed = index % 2 === 1;
 
                         return (
@@ -76,11 +44,10 @@ export default function FeaturedServicesSection() {
                                             0{index + 1}
                                         </div>
 
-                                        <div className="flex h-full items-center justify-center p-8">
-                                            <div className="rounded-3xl border border-emerald-300/60 bg-white/70 px-6 py-4 text-sm font-medium text-emerald-800 backdrop-blur">
-                                                Service Image Placeholder
-                                            </div>
-                                        </div>
+                                        <img
+                                            src={service.image}
+                                            className="flex h-full items-center justify-center rounded-2xl object-cover p-8"
+                                        />
                                     </div>
 
                                     <div className="flex items-center p-8 sm:p-10 lg:p-12">
@@ -98,15 +65,11 @@ export default function FeaturedServicesSection() {
                                             </p>
 
                                             <div className="mt-8 flex flex-wrap gap-3">
-                                                <span className="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-800">
-                                                    Compassionate Care
-                                                </span>
-                                                <span className="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-800">
-                                                    Professional Support
-                                                </span>
-                                                <span className="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-800">
-                                                    Client-Centered
-                                                </span>
+                                                {service.details.map((detailItem) => (
+                                                    <span className="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-800">
+                                                        {detailItem}
+                                                    </span>
+                                                ))}
                                             </div>
                                         </div>
                                     </div>

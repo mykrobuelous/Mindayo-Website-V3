@@ -1,5 +1,6 @@
 // 📦 LIBRARIES IMPORT
 import { twMerge } from 'tailwind-merge';
+import { nameData } from '../data/homePageData';
 
 /* ===================================================================== */
 /*
@@ -11,51 +12,6 @@ import { twMerge } from 'tailwind-merge';
 📊 STATES
     - 
 */
-
-const meanings = [
-    {
-        letter: 'M',
-        word: 'Mindfulness',
-        description:
-            'Encouraging awareness of thoughts, emotions, and the present moment with gentleness and clarity.',
-    },
-    {
-        letter: 'I',
-        word: 'Inner Healing',
-        description:
-            'Supporting the process of understanding pain, restoring balance, and reconnecting with oneself.',
-    },
-    {
-        letter: 'N',
-        word: 'Nurture',
-        description:
-            'Providing a safe, caring space where growth, self-compassion, and emotional strength can develop.',
-    },
-    {
-        letter: 'D',
-        word: 'Discovery',
-        description:
-            'Helping clients explore their experiences, patterns, and personal truths with openness and courage.',
-    },
-    {
-        letter: 'A',
-        word: 'Acceptance',
-        description:
-            'Promoting self-understanding and emotional validation as an important part of healing.',
-    },
-    {
-        letter: 'Y',
-        word: 'Yielding to Growth',
-        description:
-            'Learning to soften resistance, trust the process, and allow positive change to happen over time.',
-    },
-    {
-        letter: 'O',
-        word: 'Opportunity',
-        description:
-            'Seeing each session and each challenge as a chance for healing, transformation, and hope.',
-    },
-];
 
 interface Props {
     className?: string;
@@ -121,7 +77,7 @@ const CompanySection: React.FC<Props> = ({ className }) => {
                         </div>
 
                         <div className="divide-y divide-emerald-200/10">
-                            {meanings.map((item) => (
+                            {nameData.map((item) => (
                                 <article
                                     key={item.letter}
                                     className="grid gap-4 px-6 py-6 transition hover:bg-white/5 sm:px-8 lg:grid-cols-[90px_minmax(0,1fr)] lg:gap-6 lg:px-10"

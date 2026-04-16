@@ -1,6 +1,7 @@
 // 📦 LIBRARIES IMPORT
 import { Eye, Target } from 'lucide-react';
 import { twMerge } from 'tailwind-merge';
+import { missionData } from '../data/homePageData';
 
 /* ===================================================================== */
 /*
@@ -55,13 +56,19 @@ const MissionSection: React.FC<Props> = ({ className }) => {
                                 </h3>
                             </div>
                         </div>
-
-                        <p className="mt-8 text-base leading-8 text-slate-600">
-                            Our mission is to provide compassionate, evidence-based, and
-                            client-centered mental health care that helps individuals, couples, and
-                            families find clarity, resilience, and emotional well-being in every
-                            stage of life.
-                        </p>
+                        <div>
+                            <p className="mt-8 text-base leading-8 text-slate-600">
+                                Mindayo is committed to:
+                            </p>
+                            <ol>
+                                {missionData.map((missionItem) => (
+                                    <li className="mt-4 flex items-center gap-3" key={missionItem}>
+                                        <div className="h-2 w-2 rounded-full bg-emerald-500" />
+                                        <p className="leading-none">{missionItem}</p>
+                                    </li>
+                                ))}
+                            </ol>
+                        </div>
 
                         <div className="mt-8 rounded-2xl bg-emerald-50 p-5">
                             <p className="text-sm font-semibold text-emerald-800">Core focus</p>
@@ -91,9 +98,9 @@ const MissionSection: React.FC<Props> = ({ className }) => {
                         </div>
 
                         <p className="mt-8 text-base leading-8 text-slate-600">
-                            Our vision is to become a trusted center for healing and transformation,
-                            where mental health support is accessible, stigma-free, and empowering
-                            for every person seeking peace, restoration, and lasting change.
+                            MindaAYO Psychological Care Center is dedicated to becoming a leader in
+                            accessible, ethical, and evidence-based psychological care in Mindanao,
+                            fostering mental well-being, resilience, and lifelong growth.
                         </p>
 
                         <div className="mt-8 rounded-2xl bg-emerald-50 p-5">

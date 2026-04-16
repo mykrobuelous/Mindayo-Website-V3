@@ -1,8 +1,9 @@
 // 📦 LIBRARIES IMPORT
 import { navLinks } from '@/collection/data/navLinks';
-import { Leaf, Menu } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { useNavigate } from 'react-router';
 import { twMerge } from 'tailwind-merge';
+import LogoImage from '@/shared/assets/Logo BG.png';
 
 /* ===================================================================== */
 /*
@@ -28,18 +29,11 @@ const HeaderSection: React.FC<Props> = ({ className }) => {
                     className={twMerge('flex items-center justify-between py-5 lg:py-7', className)}
                 >
                     <a href="#home" className="flex items-center gap-3">
-                        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700 shadow-sm">
-                            <Leaf className="h-5 w-5" />
-                        </div>
-
-                        <div>
-                            <p className="text-base font-semibold tracking-tight text-emerald-900">
-                                Serenity Wellness
-                            </p>
-                            <p className="text-sm text-slate-500">
-                                Therapy & Psychological Services
-                            </p>
-                        </div>
+                        <img
+                            src={LogoImage}
+                            alt="Mindayo Logo"
+                            className="h-10 w-30 object-contain"
+                        />
                     </a>
 
                     <nav className="hidden items-center gap-8 md:flex">

@@ -111,8 +111,8 @@ export default function ContactSection() {
                                 <div>
                                     <p className="text-sm font-semibold text-white">Office Hours</p>
                                     <div className="mt-3 space-y-2 text-sm leading-7 text-emerald-50/80">
-                                        <p>Monday to Friday — 9:00 AM to 5:00 PM</p>
-                                        <p>Saturday — 9:00 AM to 12:00 PM</p>
+                                        <p>Monday to Friday — 9:00 AM to 6:00 PM</p>
+                                        <p>Saturday — 8:00 AM to 12:00 PM</p>
                                         <p>Sunday — Closed</p>
                                     </div>
                                 </div>

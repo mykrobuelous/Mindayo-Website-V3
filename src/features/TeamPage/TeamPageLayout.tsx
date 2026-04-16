@@ -1,8 +1,9 @@
 // 📦 LIBRARIES IMPORT
 import { twMerge } from 'tailwind-merge';
 import AboutTherapistSection from './containers/TherapistSection';
-import StaffSection from './containers/StaffSection';
 import BackgroundSection from './containers/BackgroundSection';
+import PyschometricianSection from './containers/PyschometricianSection';
+import AssociatesSection from './containers/AssociatesSection';
 
 /* ===================================================================== */
 /*
@@ -24,7 +25,8 @@ const TeamPageLayout: React.FC<Props> = ({ className }) => {
         <div className={twMerge('', className)}>
             <BackgroundSection />
             <AboutTherapistSection />
-            <StaffSection />
+            <AssociatesSection />
+            <PyschometricianSection />
         </div>
     );
 };

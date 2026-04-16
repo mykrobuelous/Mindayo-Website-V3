@@ -1,78 +1,4 @@
-type TherapistItem = {
-    name: string;
-    role: string;
-    credentials: string[];
-    description: string;
-    specialties: string[];
-};
-
-const therapists: TherapistItem[] = [
-    {
-        name: 'Dr. Maria Santos',
-        role: 'Clinical Psychologist',
-        credentials: [
-            'PhD in Clinical Psychology',
-            'Licensed Psychologist',
-            '10+ years of therapy experience',
-        ],
-        description:
-            'Dr. Maria Santos provides compassionate, evidence-based care for individuals navigating anxiety, emotional stress, trauma, and life transitions. Her approach is warm, structured, and grounded in creating emotional safety for every client.',
-        specialties: ['Anxiety', 'Trauma Recovery', 'Emotional Regulation', 'Life Transitions'],
-    },
-    {
-        name: 'Dr. Angela Reyes',
-        role: 'Counseling Psychologist',
-        credentials: [
-            'PsyD in Counseling Psychology',
-            'Licensed Psychometrician',
-            'Specialized in adolescent and family support',
-        ],
-        description:
-            'Dr. Angela Reyes focuses on helping adolescents, young adults, and families build healthier communication, stronger emotional awareness, and greater resilience. She brings a calm, relational, and client-centered style to her work.',
-        specialties: [
-            'Family Concerns',
-            'Adolescent Counseling',
-            'Self-Esteem',
-            'Stress Management',
-        ],
-    },
-    {
-        name: 'Mr. Daniel Cruz',
-        role: 'Psychotherapist',
-        credentials: [
-            'MA in Psychology',
-            'Certified Psychotherapist',
-            'Extensive background in individual counseling',
-        ],
-        description:
-            'Daniel Cruz supports clients dealing with grief, burnout, inner conflict, and identity concerns. His sessions emphasize reflective exploration, practical coping tools, and a steady therapeutic presence.',
-        specialties: ['Grief', 'Burnout', 'Identity Concerns', 'Personal Growth'],
-    },
-    {
-        name: 'Ms. Patricia Lim',
-        role: 'Mental Health Counselor',
-        credentials: [
-            'MA in Guidance and Counseling',
-            'Licensed Professional Teacher',
-            'Trained in mindfulness-based approaches',
-        ],
-        description:
-            'Patricia Lim works with clients who want to better understand their emotions, patterns, and relationships. Her therapeutic style combines gentle inquiry, mindfulness, and emotional validation to support sustainable healing.',
-        specialties: ['Mindfulness', 'Relationships', 'Emotional Awareness', 'Self-Compassion'],
-    },
-    {
-        name: 'Dr. Christine Tan',
-        role: 'Assessment & Research Specialist',
-        credentials: [
-            'PhD in Psychology',
-            'Licensed Psychologist',
-            'Expert in psychological assessment and research',
-        ],
-        description:
-            'Dr. Christine Tan specializes in psychological screening, assessments, and research-informed clinical insight. She helps clients and organizations gain clarity through careful evaluation and meaningful interpretation.',
-        specialties: ['Psychological Assessment', 'Research', 'Diagnostics', 'Clinical Evaluation'],
-    },
-];
+import { therapists } from '../data/teamData';
 
 const AboutTherapistSection = () => {
     return (
@@ -118,14 +44,11 @@ const AboutTherapistSection = () => {
                                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.10),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(167,243,208,0.18),transparent_35%)]" />
 
                                         <div className="relative z-10 flex w-full max-w-md flex-col items-center text-center">
-                                            <div className="flex h-28 w-28 items-center justify-center rounded-full border border-white/20 bg-white/10 text-3xl font-semibold text-white backdrop-blur">
-                                                {therapist.name
-                                                    .split(' ')
-                                                    .slice(0, 2)
-                                                    .map((part) => part[0])
-                                                    .join('')}
-                                            </div>
-
+                                            <img
+                                                src={therapist.image}
+                                                alt={therapist.name}
+                                                className="h-80 w-80 rounded-full object-cover"
+                                            />
                                             <p className="mt-6 text-sm tracking-[0.24em] text-emerald-100/80 uppercase">
                                                 Therapist Profile
                                             </p>
@@ -137,10 +60,6 @@ const AboutTherapistSection = () => {
                                             <p className="mt-2 text-base text-emerald-50/85">
                                                 {therapist.role}
                                             </p>
-
-                                            <div className="mt-8 rounded-3xl border border-white/15 bg-white/10 px-5 py-3 text-sm text-emerald-50/85 backdrop-blur">
-                                                Photo Placeholder
-                                            </div>
                                         </div>
                                     </div>
 
