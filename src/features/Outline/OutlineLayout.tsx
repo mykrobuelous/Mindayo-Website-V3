@@ -1,5 +1,4 @@
 // 📦 LIBRARIES IMPORT
-import { twMerge } from 'tailwind-merge';
 import HeaderSection from './containers/HeaderSection';
 import { Outlet } from 'react-router';
 import FooterSection from './containers/FooterSection';
